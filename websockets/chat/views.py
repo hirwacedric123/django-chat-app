@@ -5,16 +5,14 @@ from .models import Room, Message
 def index(request):
     if request.method == 'POST':
         username = request.POST['username']
-        room_name = request.POST['room']
+        room = request.POST['room']
         
         try:
-            existing_room = Room.objects.get(room_name=room)
-            if not username or not room_name:
-                return render(request, 'chat/index.html', {'error': 'Username and room name are required.'})
+            existing_room = Room.objects.get(room_name__icontains=room)
         except Room.DoesNotExist:
-            Room.objects.create(room_name=room)
+            r = Room.objects.create(room_name=room)
 
-        return redirect('room', room_name=room_name, username=username)
+        return redirect('room', room_name=room, username=username)
     return render(request, 'chat/index.html')
 
 def room(request, room_name, username):
