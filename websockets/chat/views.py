@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Room, Message
 
 # Create your views here.
@@ -14,10 +14,7 @@ def index(request):
         except Room.DoesNotExist:
             Room.objects.create(room_name=room)
 
-        return render(request, 'chat/room.html', {
-            'room_name': room_name,
-            'username': username
-        })
+        return redirect('room', room_name=room_name, username=username)
     return render(request, 'chat/index.html')
 
 def room(request, room_name, username):
