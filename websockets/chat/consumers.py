@@ -43,3 +43,5 @@ class ChatConsumer(AsyncWebsocketConsumer):
             new_message = Message.objects.create(
                 room=get_room, message=data["message"], sender=data["sender"]
             )
+        
+        
