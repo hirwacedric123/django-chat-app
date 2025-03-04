@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chat',
     'channels',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -71,6 +71,7 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'websockets.asgi.application'
 WSGI_APPLICATION = 'websockets.wsgi.application'
 
 
