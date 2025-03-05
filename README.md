@@ -9,7 +9,6 @@ A real-time messaging application for teams, built with **Django Channels** and 
 ## 🚀 Features  
 - 🔹 **Real-Time Messaging** – Instant message delivery with WebSockets  
 - 🔹 **No Authentication** – Open chat for all users  
-- 🔹 **Live Messages** – Messages appear instantly without refreshing  
 - 🔹 **ASGI with Redis** – Fast and scalable communication  
 
 ## 🛠️ Tech Stack  
